@@ -20,6 +20,7 @@
 
 - [ ] Github Pages
   - [ ] Photo de profile
+  - [ ] Add Chunk for JSON data (snippet, project, etc.)
   - [ ] Responsive project Detail
   - [ ] GitHub Pages 404
   - [ ] replace React Helmet by vite-plugin-ssg (useHead)
