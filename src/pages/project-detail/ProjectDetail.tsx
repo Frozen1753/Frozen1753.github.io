@@ -1,4 +1,4 @@
-import { useParams, useNavigate, Link } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { useInView } from '../../utils/hooks/useInView';
 import { formatDate } from '../../utils/formatters/dateFormatter';
 import { projects } from '../../data/projects';
@@ -6,7 +6,6 @@ import styles from './ProjectDetail.module.css';
 
 export function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
-  const navigate = useNavigate();
   const project = projects.find((p) => p.slug === slug);
 
   const { ref: contentRef, isInView: contentVisible } = useInView({ threshold: 0.1 });
