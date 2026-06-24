@@ -3,6 +3,7 @@ import './styles/global.css';
 import { lazy, Suspense } from 'react';
 import { Loader } from './features/loader/Loader';
 import { Layout } from './components/layout/Layout';
+import { NotFound } from './features/not-found/NotFound';
 
 const Home = lazy(() => import("./pages/home/Home"));
 const Projects = lazy(() => import("./pages/projects/Projects"));
@@ -29,6 +30,8 @@ function App() {
           <Route path="projects" element={lazyRoute(<Projects />)} />
           <Route path="projects/:slug" element={lazyRoute(<ProjectDetail />)} />
           <Route path="cv" element={lazyRoute(<CvPage />)} />
+
+          <Route path="*" element={<NotFound />} />
         </Route>
       </Routes>
     </BrowserRouter>
