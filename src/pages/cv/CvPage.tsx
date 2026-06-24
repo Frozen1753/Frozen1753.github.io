@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 import styles from './cvPage.module.css';
+import { PortfolioHelmet } from '../../features/helmet/UnlockItHelmet';
 
 const TABS = [
   { id: 'about', label: 'À propos' },
@@ -16,6 +17,13 @@ export function CvPage() {
 
   return (
     <section className={styles.cvPage}>
+      <PortfolioHelmet
+        title="CV"
+        description="Mon parcours, mes compétences techniques, mes expériences professionnelles et ma formation en développement web."
+        path="cv"
+        image="default-og-image.png"
+      />
+
       <h1 className={styles.title}>Curriculum Vitae</h1>
 
       {/* Tabs */}

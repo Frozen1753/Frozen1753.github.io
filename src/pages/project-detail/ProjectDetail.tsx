@@ -3,6 +3,7 @@ import { useInView } from '../../utils/hooks/useInView';
 import { formatDate } from '../../utils/formatters/dateFormatter';
 import { projects } from '../../data/projects';
 import styles from './ProjectDetail.module.css';
+import { PortfolioHelmet } from '../../features/helmet/UnlockItHelmet';
 
 export function ProjectDetail() {
   const { slug } = useParams<{ slug: string }>();
@@ -13,6 +14,14 @@ export function ProjectDetail() {
   if (!project) {
     return (
       <div className={styles.notFound}>
+        <PortfolioHelmet
+          title="Projet introuvable"
+          description="Le projet demandé n'existe pas ou a été supprimé."
+          path="projects/not-found"
+          image={null}
+          robots="noindex, nofollow"
+        />
+
         <div className={styles.container}>
           <h1>Projet non trouvé</h1>
           <p>Le projet que vous cherchez n'existe pas ou a été supprimé.</p>
@@ -26,6 +35,14 @@ export function ProjectDetail() {
 
   return (
     <div className={styles.detail}>
+      <PortfolioHelmet
+        title="Projet introuvable"
+        description="Le projet demandé n'existe pas ou a été supprimé."
+        path="projects/not-found"
+        image={null}
+        robots="noindex, nofollow"
+      />
+
       {/* Breadcrumb */}
       <nav className={styles.breadcrumb}>
         <div className={styles.container}>

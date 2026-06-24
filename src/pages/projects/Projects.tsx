@@ -3,6 +3,7 @@ import { ProjectCard } from '../../components/ui/project-card/ProjectCard';
 import { useInView } from '../../utils/hooks/useInView';
 import { projects } from '../../data/projects';
 import styles from './Projects.module.css';
+import { PortfolioHelmet } from '../../features/helmet/UnlockItHelmet';
 
 export function Projects() {
   const [selectedTech, setSelectedTech] = useState<string | null>(null);
@@ -19,6 +20,13 @@ export function Projects() {
 
   return (
     <div className={styles.projects}>
+      <PortfolioHelmet
+        title="Projets"
+        description="Découvrez l'ensemble de mes projets : applications web, outils, expérimentations et travaux personnels."
+        path="projects"
+        image="default-og-image.png"
+      />
+
       {/* Header */}
       <section
         ref={headerRef}
